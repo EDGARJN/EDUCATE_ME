@@ -1,0 +1,7 @@
+# Don't send My secret issues
+# .env
+
+# dependencies
+node_modules/
+
+# dotenv

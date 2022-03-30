@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Node.js PRO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <style>
+      div.preview-images > img {
+        width: 30%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 mt-3">
+          <h4>Client Information</h4>
+
+          <form class="mt-4"
+            action="/upload"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <input
+                type="file"
+                name="file"
+                id="input-files"
+                class="form-control-file border"
+                multiple
+              />
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="school_name">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Setlement">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="What's Matter">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Expectation">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Guardian">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Guardian_no">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br><br>
+          <h1>OBSERVER INFOS</h1>
+          <form class="mt-4"
+            action="/upload"
+            method="POST"
+          >
+            <div class="form-group">
+              <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="email">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="phone_no">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="settlement">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br><br><br>
+          <h1>DONOR INFOS</h1>
+          <form class="mt-4"
+            action="/upload"
+            method="POST"
+          >
+            <div class="form-group">
+              <input type="text" placeholder="Donor Name/Company Name">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="email">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="phone_no">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Location">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="preview-images"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        let imagesPreview = function(input, placeToInsertImagePreview) {
+          if (input.files) {
+            let filesAmount = input.files.length;
+            for (i = 0; i < filesAmount; i++) {
+              let reader = new FileReader();
+              reader.onload = function(event) {
+                $($.parseHTML("<img>"))
+                  .attr("src", event.target.result)
+                  .appendTo(placeToInsertImagePreview);
+              };
+              reader.readAsDataURL(input.files[i]);
+            }
+          }
+        };
+        $("#input-files").on("change", function() {
+          imagesPreview(this, "div.preview-images");
+        });
+      });
+    </script>
+  </body>
+</html>

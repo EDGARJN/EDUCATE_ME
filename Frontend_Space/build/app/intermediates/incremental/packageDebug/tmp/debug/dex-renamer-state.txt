@@ -1,0 +1,4 @@
+#Tue Mar 29 15:19:06 EAT 2022
+base.0=/home/edgar/ProjectSpace/FlutterSpace/pa1_service/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

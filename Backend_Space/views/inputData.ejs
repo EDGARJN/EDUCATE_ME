@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pamoja | Form for Input Data</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+  
+</head>
+
+<body class="bg-gradient">
+
+    <!-------------------INPUT DATA FORM------------------------>
+    <div class="container rounded col-lg-6 col-md-10 col-sm-10 pt-5 mt-5">
+      <div class="container bg-white pt-2 mt-5 ">
+        <form action="/regService" method="POST">
+          <div class="text-center ">
+            <label class="mb-3 mt-3 h3 fw-bold">Input Data Discriptions</label>
+          </div>
+          <div class="form-floating mb-3 mt-3">
+            <select name="role" id="">
+              <option value="service">service</option>
+              <option value="goals">goals</option>
+              <option value="vision">vision</option>
+              <option value="mission">mission</option>
+            </select>
+            <!-- <input type="text" name="title" class="form-control form-input form-control-lg" id="title" placeholder="Input Title" required>
+            <label for="title" class="form-label">Title</label>   -->
+          </div>
+          <div class="form-floating mb-3 mt-3">
+            <input type="text" name="title" class="form-control form-input form-control-lg" id="title" placeholder="Input Title" required>
+            <label for="title" class="form-label">Title</label>  
+          </div>
+      
+          <div class="form-floating input-group mb-3 mt-3 ">
+            <textarea class="form-control form-input h-100 input-group-text text-wrap" name="description" id="comment" placeholder="Description about title"></textarea>
+            <label for="comment">Description about title</label>
+          </div>
+          <div class="mb-3 mt-3">
+            <button type="submit" class="btn btn-primary col-12 mb-3">POST</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+      
+    <!--------Bootstrap js --------------->
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
